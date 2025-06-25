@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Notes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    #secret {
+      display: none;
+      margin-top: 2rem;
+      background: #ffe9e9;
+      padding: 1rem;
+      border-left: 4px solid red;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Trip to the Mountains</h1>
+  <p>
+    Last weekend, I visited the Carpathians. The air was crisp and the view from the ridge was breathtaking.
+    I wrote down a few reflections and hid them with a password — just for fun!
+  </p>
+
+  <input type="password" id="code" placeholder="Enter access key">
+  <button onclick="checkCode()">Unlock</button>
+
+  <div id="secret">
+    <p><strong>Hey...</strong> Are you okay? If you need help, please click the button below or use our usual signal.</p>
+    <button onclick="alert('Okay. I’m here for you. Please stay safe.')">I need help</button>
+  </div>
+
+  <script>
+    function checkCode() {
+      const validWords = ["siliotka", "siliodca"];
+      const input = document.getElementById("code").value.toLowerCase();
+      if (validWords.includes(input)) {
+        document.getElementById("secret").style.display = "block";
+      } else {
+        alert("No additional content found.");
+      }
+    }
+  </script>
+</body>
+</html>
