@@ -2,36 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Travel Notes</title>
+  <title>Pozele absolvenților FB-211</title>
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      margin: 2rem;
       background-color: #f9f9f9;
       color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
+
+    .container {
+      max-width: 600px;
+      padding: 2rem;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
     #secret {
       display: none;
       margin-top: 2rem;
       background: #ffe9e9;
       padding: 1rem;
       border-left: 4px solid red;
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    input, button {
+      margin-top: 1rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    button {
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>My Trip to the Mountains</h1>
-  <p>
-    Last weekend, I visited the Carpathians. The air was crisp and the view from the ridge was breathtaking.
-    I wrote down a few reflections and hid them with a password — just for fun!
-  </p>
+  <div class="container">
+    <h1>CEEF Pozele absolvenților FB-211</h1>
+    <p>Parola:</p>
+    <input type="password" id="code" placeholder="Introdu parola de acces">
+    <br>
+    <button onclick="checkCode()">Acceseaza</button>
 
-  <input type="password" id="code" placeholder="Enter access key">
-  <button onclick="checkCode()">Unlock</button>
-
-  <div id="secret">
-    <p><strong>Hey...</strong> Are you okay? If you need help, please click the button below or use our usual signal.</p>
-    <button onclick="alert('Okay. I’m here for you. Please stay safe.')">I need help</button>
+    <div id="secret">
+      <p><strong>Hey babi</strong>, I'm now a little programmer hehe. I want to tell you that I'm not mad at you for not replying to your emails. I will only do it when you send me one saying it's safe to communicate, because I have no idea if someone is able to read our emails and it will make it worse if they find out about our only means of communication.</p>
+      <p>Btw we have guaranteed places to stay and a lot of support, there's nothing we must worry about, I can't wait to tell you all about it.</p>
+      <p>Also careful about the medication. I don’t want them to say you were easily manipulated to run away because you were on pills for your mental health and were mentally ill. When you can, tell me the name of the pills.</p>
+      <p>Reply to this email with our safe word so that I know you saw this. I love you more than you can imagine, please stay safe and let me know as soon as you can that you saw this. I'm not giving up on you ever, and I ask you for the same thing. We are endgame.</p>
+      <button onclick="alert('I’m here for you. Please stay safe. I love you infinitely')">Click here</button>
+    </div>
   </div>
 
   <script>
@@ -41,7 +72,7 @@
       if (validWords.includes(input)) {
         document.getElementById("secret").style.display = "block";
       } else {
-        alert("No additional content found.");
+        alert("Safe word");
       }
     }
   </script>
